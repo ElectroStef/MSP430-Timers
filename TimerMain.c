@@ -14,10 +14,13 @@ void setUpTimerA1()
     TA1CTL = TASSEL__SMCLK |ID__4 | MC__UP;
 }
 
+void setUpTimerA2()
+{
+    TA2CCTL0 = CCIE;
+    TA2CCR0 = 53000;
+    TA2CTL = TASSEL__SMCLK |ID__4|MC__UP;
+}
 
-/**
- * main.c
- */
 int main(void)
 {
 	WDTCTL = WDTPW | WDTHOLD;	// stop watchdog timer
@@ -42,12 +45,8 @@ int main(void)
     P1IFG &= ~0x01;
 
     setUpTimerA0();
-
-
-
-    TA2CCTL0 = CCIE;
-    TA2CCR0 = 53000;
-    TA2CTL = TASSEL__SMCLK |ID__4|MC__UP;
+    setUpTimerA1();
+    setUpTimerA2();
 
     _bis_SR_register(LPM0_bits + GIE);
     _no_operation();
