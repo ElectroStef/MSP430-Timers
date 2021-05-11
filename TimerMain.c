@@ -1,6 +1,11 @@
+/*
+This program is for the MSP430FR5969
+Author: Stefan Tomovic
+Date: 05/10/21
+*/
+
 #include <msp430.h>
 #include <TimerMain.h>
-
 
 int main(void)
 {
@@ -15,8 +20,3 @@ int main(void)
   _no_operation();
 
 }
-
-
-
-
-
