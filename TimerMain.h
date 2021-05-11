@@ -3,23 +3,23 @@
 
 void setUpTimerA0()
 {
-    TA0CCTL0 = CCIE;
-    TA0CCR0 = 51000;
-    TA0CTL = TASSEL__SMCLK |ID__4| MC__UP;
+  TA0CCTL0 = CCIE;
+  TA0CCR0 = 51000;
+  TA0CTL = TASSEL__SMCLK |ID__4| MC__UP;
 }
 
 void setUpTimerA1()
 {
-    TA1CCTL0 = CCIE;
-    TA1CCR0 = 52000;
-    TA1CTL = TASSEL__SMCLK |ID__4 | MC__UP;
+  TA1CCTL0 = CCIE;
+  TA1CCR0 = 52000;
+  TA1CTL = TASSEL__SMCLK |ID__4 | MC__UP;
 }
 
 void setUpTimerA2()
 {
-    TA2CCTL0 = CCIE;
-    TA2CCR0 = 53000;
-    TA2CTL = TASSEL__SMCLK |ID__4|MC__UP;
+  TA2CCTL0 = CCIE;
+  TA2CCR0 = 53000;
+  TA2CTL = TASSEL__SMCLK |ID__4|MC__UP;
 }
 
 void setUpGPIOs()
@@ -60,7 +60,7 @@ __interrupt void delay3()
 #pragma vector = PORT1_VECTOR
 __interrupt void pushButton()
 {
-    PJOUT ^= BIT3;
-    P1IFG &= ~BIT0;
+  PJOUT ^= BIT3;
+  P1IFG &= ~BIT0;
 }
 #endif
